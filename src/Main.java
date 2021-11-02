@@ -20,6 +20,7 @@ public class Main {
         //Products
         Product A = new Product("A", 10.00, Promotion.promoProductA);
         Product B = new Product("B", 9.00, Promotion.halfPricePromoBaseOnItemsProductA);
+        Product B1 = new Product("B", 9.00, Promotion.halfPricePromoBaseOnItemsProductA);
         Product X = new Product("X", 10.00, Promotion.promoSet3OfProducts);
         Product Y = new Product("Y", 5.00, Promotion.promoSet3OfProducts);
         Product Z = new Product("Z", 4.00, Promotion.promoSet3OfProducts);
@@ -34,13 +35,13 @@ public class Main {
         Cart cart = new Cart();
 
         List<ItemInCart> itemList = new ArrayList<>();
-        cart.addToCart(new ItemInCart(A, 1));
-        cart.addToCart(new ItemInCart(B, 1));
-        cart.addToCart(new ItemInCart(B, 1));
-        cart.addToCart(new ItemInCart(X, 1));
-        cart.addToCart(new ItemInCart(Y, 1));
-        cart.addToCart(new ItemInCart(Z, 1));
-        cart.addToCart(new ItemInCart(R, 1));
+        cart.addToCart(new ItemInCart(A, 2)); //20 + 9/2 + 9/2 = 29
+        cart.addToCart(new ItemInCart(B, 1)); // 20 + 4.5
+        cart.addToCart(new ItemInCart(B1, 1));
+//        cart.addToCart(new ItemInCart(A, 1));
+//        cart.addToCart(new ItemInCart(Y, 1));
+//        cart.addToCart(new ItemInCart(Z, 1));
+//        cart.addToCart(new ItemInCart(R, 1));
         System.out.println(paymentService.calcAllProducts(cart, pairHalfPricePromoList));
     }
 }

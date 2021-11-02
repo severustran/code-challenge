@@ -34,4 +34,12 @@ public class Product {
     public void setPromotion(final String promotion) {
         this.promotion = promotion;
     }
+
+    @Override
+    public boolean equals(final Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Product)) return false;
+        Product product = (Product) obj;
+        return (productName.equals(product.productName) && productPrice.equals(product.productPrice) && promotion.equals(product.promotion));
+    }
 }

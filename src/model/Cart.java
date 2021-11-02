@@ -17,7 +17,7 @@ public class Cart {
     public void addToCart(ItemInCart item) {
         boolean isInCart = true;
         for (ItemInCart itemInCart : itemInCartList) {
-            if (itemInCart.getProduct() == item.getProduct()) {
+            if (itemInCart.getProduct().equals(item.getProduct())) {
                 itemInCart.setQuantity(itemInCart.getQuantity() + item.getQuantity());
                 isInCart = false;
                 break;
